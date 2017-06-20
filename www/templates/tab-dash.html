@@ -1,0 +1,54 @@
+<ion-view view-title="✿ 电影院" >
+	<ion-content  hdb>
+		<div>
+		<div ng-repeat="(index,b) in bbb">
+			<div data-index={{index}} style="background-color: #e1e1e1;height: 3.3rem;width: 100%;border-top: 1px solid #FFFFFF;color: #636363;font-size: 1.15rem;line-height: 3.3rem;padding-left: 2rem;" ng-click="showli($event)">{{b.title}}</div>
+			<ul ng-show="b.isShow">
+				<li ng-repeat="j in b.list" style="background-color: #FFFFFF;border-bottom: 1px solid #E1E1E1;padding: 1.38rem;width: 100%;">
+					<a href="#/tab/dash/{{j.id}}" style="text-decoration: none;display: flex;justify-content: space-between;"> 
+					<div style="width: 70%;">
+						<i style="
+							color: #000000;
+    						overflow: hidden;
+   							 text-overflow: ellipsis;
+    					white-space: nowrap; 
+   				 display: inline-block;
+   				 vertical-align: text-top;
+   			 max-width: 80%;font-size: 1.3rem;">{{j.name}}
+   			 </i>
+   				<p   style="font-size:0.8rem;display: inline-block;width: 1.4rem;height: 1.4rem;border-radius: 50%;border: 1px solid #FC8457;color: #FC8457;line-height: 1.3rem;text-align: center;box-sizing: border-box;">座</p>
+   				<p    ng-if="j.minimumPrice != 0" style="font-size:0.8rem;display: inline-block;width: 1.4rem;height: 1.4rem;border-radius: 50%;border: 1px solid #96B6CF;color: #96B6CF;line-height: 1.3rem;text-align: center;">通</p>
+   				<div>
+   			<div ng-if="j.labels" ng-repeat="(index,l) in j.labels"  style="background-color: #FF9658;color: #FFFFFF;border-radius: 5px;width: 5.2rem;font-size: 1rem;text-align: center;display: inline-block; margin-left: 3px;" class="ce{{index}}">
+   				{{l.name}}
+   			</div>
+   			</div>
+   			 <p style="
+    						overflow: hidden;
+   							 text-overflow: ellipsis;
+    						white-space: nowrap; 
+    						color: #CCCCCC;
+   						 vertical-align: text-top;
+   						 margin-top: 0.5rem;
+   			 max-width: 100%;font-size: 1rem;">{{j.address}}
+   			 </p>
+   			 <p style="
+    						overflow: hidden;
+   							 text-overflow: ellipsis;
+    						white-space: nowrap; 
+    						color: #CCCCCC;
+   						 vertical-align: text-top;
+   						 margin-top: -0.5rem;
+   						 margin-bottom: -5px;
+   			 max-width: 100%;font-size: 1rem;">距离未知
+   			 </p>
+
+					</div>
+					<span class="ion-chevron-right" style="color: #C6C8CE;"></span>
+				</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+	</ion-content>
+</ion-view>

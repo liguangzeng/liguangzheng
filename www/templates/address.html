@@ -1,0 +1,30 @@
+<ion-view view-title=" 地址" hide-tabs="true">
+
+	<ion-content hdb >
+			<p class="ddd">GPS定位你所在的城市</p>
+			<p id="aii">深圳</p>
+			<p class="ddd">热门城市</p>
+			<ul class="fff">
+				<li>北京</li>
+				<li>上海</li>
+				<li>广州</li>
+				<li>深圳</li>
+			</ul>
+			<p class="ddd">按字母排序</p>
+			<ul class="fff">
+				<li ng-repeat='(inde,k) in cities' data-index={{inde}} ng-click="tiao($event)">{{k.title}}</li>
+			</ul>
+			
+			<div ng-repeat='(index,k) in cities'>
+				<p class="ddd ti{{index}}"  >{{k.title}}</p>
+			<ul class="fff">
+				
+			<li ng-repeat='i in k.list'  ng-click="add($event)" data={{i}}>{{i.name}}</li>
+				</a>
+			</ul>
+			</div>
+			
+			
+	</ion-content>
+	<div id="gotop1" ng-show="isshow" ng-click="btnClick()" class="sh"><span class="ion-arrow-up-a" style="color: #FFFFFF;font-size: 2.6rem;"></span></div>
+</ion-view>

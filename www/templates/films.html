@@ -1,0 +1,54 @@
+<ion-view view-title="✿&#x3000; 卖座电影">
+
+	<div class="tabcard">
+		<p id="nihao" class="haha" ng-click="haha()">正在热映</p>
+		<p class="hehe" ng-click="hehe()">即将上映</p>
+	</div>
+	<ion-content hdb style="background-color: #FFFFFF;" id="hua">
+			
+		<div style="margin-top:50px;padding: 0 2.5rem 0 1.5rem;" ng-show="hahaShow">
+			<section ng-if="nowingFilms " ng-repeat="k in nowingFilms  " class="nowplaying" style="padding: 1rem 0;border-bottom: 1px dashed #8E8E8E;">
+				<a href="#/tab/account/{{k.id}}" style="text-decoration: none;">
+					<div style="display: flex;align-items: center;">
+						<img src={{k.poster.thumbnail}} style="width: 5rem;" />
+						<div style="color: #8E8E8E;font-size: 0.9rem;margin-left: 1rem;">
+							<h3 style="font-size: 1.5rem;width: 65vw;">{{k.name}}  
+						<span style="color: #8E8E8E;float: right;">> </span>
+						<span style="float: right;color: #fc7103;">{{k.grade}} </span></h3>
+							<p>{{k.intro}}</p>
+							<p>{{k.cinemaCount}}家影院上映 &#x3000;&#x3000;
+								<span>{{k.watchCount}}人购票</span></p>
+						</div>
+					</div>
+				</a>
+			</section>
+		</div>
+
+		<div style="margin-top: 50px;padding: 0 2.5rem 0 1.5rem;" ng-show="heheShow">
+			<section ng-if="comingFilms " ng-repeat="k in comingFilms  " class="nowplaying" style="padding: 1rem 0;border-bottom: 1px dashed #8E8E8E;">
+				<a href="#/tab/account/{{k.id}}" style="text-decoration: none;">
+					<div style="display: flex;align-items: center;">
+						<img src={{k.poster.thumbnail}} style="width: 5rem;" />
+						<div style="color: #8E8E8E;font-size: 0.9rem;margin-left: 1rem;">
+							<h3 style="font-size: 1.5rem;width: 65vw;">{{k.name}}  
+						<span style="color: #8E8E8E;float: right;">> </span>
+						</h3>
+							<p>{{k.intro}}</p>
+							<p style="color: #FFB375;">{{k.month}}月{{k.day}}日上映 &#x3000;&#x3000;
+								<span>星期 {{k.data}}</span></p>
+						</div>
+					</div>
+				</a>
+			</section>
+		</div>
+		<div ng-show="meile" style="width: 100%;text-align: center;margin: 15px 0px;color: orange;">没有更多了~~~~</div>
+		<ion-infinite-scroll 
+			 on-infinite="loadMore()" 
+			 distance="10%"
+			 ng-if="moreDataCanBeLoaded()"
+			 >
+		</ion-infinite-scroll>
+	
+	</ion-content>
+	<div id="gotop1" ng-show="isshow" ng-click="btnClick()" class="sh"><span class="ion-arrow-up-a" style="color: #FFFFFF;font-size: 2.6rem;"></span></div>
+</ion-view>

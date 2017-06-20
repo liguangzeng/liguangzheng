@@ -1,0 +1,48 @@
+<ion-view view-title="影院详情" hide-tabs="true">
+	<ion-content  hdb>
+	<img src="../img/1.png"  width="100%" class="hi"/>
+	<div class="gouwu">
+		<p class="ion-ios-monitor-outline  tubiao" ></p>
+		<div class="fir">
+			<div class="ccc"><h3 class="zuo">订座票</h3><p class="ding">立即订座</p> </div>
+			<p class="remind">选好场次及坐位，到影院自主机取票</p>
+		</div>
+	</div>
+	<div class="gouwu">
+		<p class="ion-ios-pricetags-outline tubiao" style="color: #43B5B5;"></p>
+		<div class="fir">
+			<div class="ccc"><h3 class="zuo">通兑票</h3><p class="ding2">立即订票</p> </div>
+			<p class="remind">有效期内到影院前台兑换影票</p>
+		</div>
+	</div>
+	<div class="gouwu">
+		<p class="ion-ios-medical-outline  tubiao" style="color: #3697D1;"></p>
+		<div class="fir" style="padding-bottom: 2.1rem;">
+			<div class="ccc"><h3 class="zuo">小卖品</h3><p class="ding">立即订座</p> </div>
+		</div>
+	</div>
+	
+	<div class="gouwu">
+		<p class="ion-ios-location-outline  tubiao" style="color: #3697D1;"></p>
+		<div class="fir" style="padding-bottom: 3rem;">
+			<div class="ccc" ><h3 class="zuo" style="font-size: 1.2rem;">{{cinform.address}}</h3></div>
+		</div>
+	</div>
+	<div class="gouwu">
+		<p class="ion-ios-telephone-outline  tubiao" style="color: #E69A9F;"></p>
+		<div class="fir" style="padding-bottom: 3rem;">
+			<div class="ccc" ><h3 class="zuo"  ng-if="cinform.telephones" ng-repeat="k in cinform.telephones">{{k}}</h3></div>
+		</div>
+	</div>
+	<ul style="display: flex;background: #FFFFFF;margin-top: 1rem;width: 100%;" id="ai">
+		<li   ng-click="btnclick1($event)" style="border-bottom: 3px solid #FE8233;"><p data-index = "0"  class="ion-ios-pricetags-outline xxk xxk2"></p><span class="xxk1">取票</span></li>
+		<li  ng-click="btnclick1($event)"><p data-index = "1"  class="ion-android-car xxk"></p><span class="xxk1">停车</span></li>
+		<li  ng-click='btnclick1($event)'><p data-index = "2" class="ion-ios-recording-outline xxk"></p><span class="xxk1">3D电影</span></li>
+		<li  ng-click="btnclick1($event)"><p data-index = "3" class="ion-android-happy xxk"></p><span class="xxk1">优惠</span></li>
+		<li  ng-click="btnclick1($event)"><p data-index = "4" class="ion-android-bus xxk"></p><span class="xxk1">交通</span></li>
+	</ul>
+		<div class="in">{{in}}</div>
+		
+	
+	</ion-content>
+</ion-view>

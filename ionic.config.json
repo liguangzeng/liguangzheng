@@ -1,0 +1,10 @@
+{
+  "name": "myApp",
+  "app_id": "",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://m.maizuo.com/v4/api"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+<ion-view view-title="✿&#x3000; 卖座电影">
+	<ion-content  id="hua" hdb>
+		<div ng-if= "xianshi">
+		<ion-slide-box ng-if="mainData" auto-play="true" does-continue="true">
+			<ion-slide ng-repeat="i in mainData">
+				<a href={{i.url}}><img src={{i.imageUrl}} style="width: 100%;"></a>
+			</ion-slide>
+		</ion-slide-box>
+
+
+
+
+		<section ng-if="nowplaying" ng-repeat="k in nowplaying " class="nowplaying">
+
+			<div style="margin: 0px 0px -6px;"><a href="#/tab/chats/{{k.id}}"><img src={{k.cover.origin}} style="width: 100%;" /></a></div>
+
+			<div class="filmcard" style="background-color: white;display: flex;align-items: center;justify-content: space-between;padding: 1rem 1.4rem;" >
+				<div>
+					<p >{{k.name}}</p>
+					<p style="color: #9A9A9A;"><span>{{k.cinemaCount}}</span>家影院上映<span>{{k.watchCount}}</span>人购票</p>
+				</div>
+				<span style="font-size: 1.6rem;color: #F78360;">{{k.grade}}</span>
+			</div>
+
+		</section>
+			<a href="#/tab/account" class="moreFilm">更多热映电影</a>
+			
+			<div class="cut-off">
+				<div>即 将 上 映</div>
+			</div>
+			
+			
+			
+			
+			
+			<section ng-if="comingsoon" ng-repeat="k in comingsoon " class="nowplaying">
+
+			<div style="margin: 0px 0px -6px;"><a href="#/tab/chats/{{k.id}}"><img src={{k.cover.origin}} style="width: 100%;" /></a></div>
+
+			<div class="filmcard" style="background-color: white;display: flex;align-items: center;justify-content: space-between;padding: 1rem 1.4rem;" >
+				<div>
+					<p >{{k.name}}</p>
+				</div>
+				<span style="font-size: 1rem;color: #F78360;">{{k.month}}月{{k.day}}日上映</span>
+			</div>
+			</section>
+			<a href="#/tab/account" class="moreFilm">更多热映电影</a>
+			</div>
+			<div ng-if="!xianshi" style="width: 100%;height: 100vh;background-color: #FFFFFF;text-align: center;line-height: 100%;font-size: 3rem;">数据加载中~~~ </div>
+	</ion-content>
+	<div id="gotop1"  ng-show="isshow"  ng-click="btnClick()" class="sh"><span class="ion-arrow-up-a" style="color: #FFFFFF;font-size: 2.6rem;"></span></div>
+</ion-view>
